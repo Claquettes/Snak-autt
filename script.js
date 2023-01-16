@@ -16,6 +16,16 @@ function createFood() {
     foodUnit.style.top = foodY + "px";
     gameArea.appendChild(foodUnit);
 }
+function checkCollision() {
+    for (let i = 0; i < snake.length - 1; i++) {
+        if (snake[i].x === snake[snake.length - 1].x && snake[i].y === snake[snake.length - 1].y) {
+            alert("Game over! Your score is " + score);
+            gameStarted = false;
+            clearInterval(gameLoop);
+        }
+    }
+}
+
 
 function move() {
     let snakeHead = snake[snake.length - 1];
@@ -23,6 +33,7 @@ function move() {
     let newY = snakeHead.y + dy;
     if (newX >= 0 && newX <= 290 && newY >= 0 && newY <= 290) {
         snake.push({x: newX, y: newY});
+        checkCollision();
         if (newX === food.x && newY === food.y) {
             score++;
             document.getElementById("food").remove();
