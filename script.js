@@ -1,44 +1,36 @@
-let gameStarted = false;
 let gameArea = document.getElementById("game-area");
 let snake = [{x: 150, y: 150}];
-let food = {x: Math.floor(Math.random() * 290), y: Math.floor(Math.random() * 290)};
-let dx = 0;
+let dx = 10;
 let dy = 0;
 let score = 0;
+let gameStarted = false;
 let gameLoop;
 
-// Function to create a new food unit
 function createFood() {
-    food = {x: Math.floor(Math.random() * 290), y: Math.floor(Math.random() * 290)};
+    let foodX = Math.floor(Math.random() * 30) * 10;
+    let foodY = Math.floor(Math.random() * 30) * 10;
+    food = {x: foodX, y: foodY};
     let foodUnit = document.createElement("div");
     foodUnit.id = "food";
-    foodUnit.style.left = food.x + "px";
-    foodUnit.style.top = food.y + "px";
+    foodUnit.style.left = foodX + "px";
+    foodUnit.style.top = foodY + "px";
     gameArea.appendChild(foodUnit);
 }
 
-// Function to move the snake
 function move() {
     let snakeHead = snake[snake.length - 1];
     let newX = snakeHead.x + dx;
     let newY = snakeHead.y + dy;
     if (newX >= 0 && newX <= 290 && newY >= 0 && newY <= 290) {
         snake.push({x: newX, y: newY});
-        if (newX !== food.x || newY !== food.y) {
-            let snakeTail = snake.shift();
-            let snakeTailUnit = document.getElementById("snake-unit-" + snakeTail.x + "-" + snakeTail.y);
-            snakeTailUnit.parentNode.removeChild(snakeTailUnit);
-        } else {
+        if (newX === food.x && newY === food.y) {
             score++;
-            // this will update the score
-            document.getElementById("food").parentNode.removeChild(document.getElementById("food"));
-            //on every food eaten, create a new food
+            document.getElementById("food").remove();
             createFood();
-            //on every food eaten, increase the size of the snake
+        } else {
             let snakeTail = snake.shift();
             let snakeTailUnit = document.getElementById("snake-unit-" + snakeTail.x + "-" + snakeTail.y);
             snakeTailUnit.parentNode.removeChild(snakeTailUnit);
-            
         }
         let snakeHeadUnit = document.createElement("div");
         snakeHeadUnit.classList.add("snake-unit");
@@ -52,7 +44,6 @@ function move() {
         clearInterval(gameLoop);
     }
 }
-
 //start button and the event listener     //start button and the event listener 
     let startButton = document.getElementById("start-button");
     startButton.addEventListener("click", function(){
