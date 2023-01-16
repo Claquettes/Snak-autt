@@ -32,7 +32,13 @@ function move() {
             score++;
             // this will update the score
             document.getElementById("food").parentNode.removeChild(document.getElementById("food"));
+            //on every food eaten, create a new food
             createFood();
+            //on every food eaten, increase the size of the snake
+            let snakeTail = snake.shift();
+            let snakeTailUnit = document.getElementById("snake-unit-" + snakeTail.x + "-" + snakeTail.y);
+            snakeTailUnit.parentNode.removeChild(snakeTailUnit);
+            
         }
         let snakeHeadUnit = document.createElement("div");
         snakeHeadUnit.classList.add("snake-unit");
