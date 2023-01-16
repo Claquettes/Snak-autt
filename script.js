@@ -3,7 +3,7 @@ let snake = [{x: 150, y: 150}];
 let dx = 10;
 let dy = 0;
 let score = 0;
-let gameStarted = false;
+let gameStarted = true;
 let gameLoop;
 
 function createFood() {
@@ -58,7 +58,8 @@ function move() {
 //start button and the event listener     //start button and the event listener 
     let startButton = document.getElementById("start-button");
     startButton.addEventListener("click", function(){
-        if(!gameStarted){
+        if(gameStarted){
+            startButton.innerHTML = "Restart";
             createFood();
             for (let i = 0; i < snake.length; i++) {
                 let snakeUnit = document.createElement("div");
@@ -85,5 +86,24 @@ function move() {
                 }
             }
             gameStarted = true;
+        }else{
+            //WE DELETE THE FOOD
+            document.getElementById("food").remove();
+            //WE DELETE THE SNAKE
+            for (let i = 0; i < snake.length; i++) {
+                let snakeUnit = document.getElementById("snake-unit-" + snake[i].x + "-" + snake[i].y);
+                snakeUnit.parentNode.removeChild(snakeUnit);
+            }
+            //WE RESET THE SCORE
+            score = 0;
+            //WE RESET THE SNAKE
+            snake = [{x: 150, y: 150}];
+            //WE RESET THE DIRECTION
+            dx = 10;
+            dy = 0;
+            //WE RESET THE GAME STARTED
+            startButton.innerHTML = "Start";
+            gameStarted = true;
         }
+
     });
