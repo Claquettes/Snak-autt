@@ -6,8 +6,10 @@ let score = 0;
 let gameStarted = true;
 let gameLoop;
 
-// on récupère depuis le html speed, length et distance
-
+//on récupère depuis le html speed, distance et length, et on les converti en int
+let speed = parseInt(document.getElementById("speed").value);
+let distance = parseInt(document.getElementById("distance").value);
+let length = parseInt(document.getElementById("length").value);
 
 function createFood() {
     let foodX = Math.floor(Math.random() * 50) * 10;
@@ -19,6 +21,7 @@ function createFood() {
     foodUnit.style.top = foodY + "px";
     gameArea.appendChild(foodUnit);
 }
+
 function checkCollision() {
     for (let i = 0; i < snake.length - 1; i++) {
         if (snake[i].x === snake[snake.length - 1].x && snake[i].y === snake[snake.length - 1].y) {
@@ -28,6 +31,7 @@ function checkCollision() {
         }
     }
 }
+
 
 
 function move() {
