@@ -17,6 +17,11 @@ console.log(speed, distance, length);
 function createFood() {
     let foodX = Math.floor(Math.random() * 50) * 10;
     let foodY = Math.floor(Math.random() * 50) * 10;
+    console.log(distance * 10);
+    do {
+        foodX = Math.floor(Math.random() * 50) * 10;
+        foodY = Math.floor(Math.random() * 50) * 10;
+    }while (foodX < (10 + (distance * 10))|| foodX > (490 - (distance * 10)) || foodY < (10 + (distance * 10)) || foodY > (490 - (distance * 10)));
     
     console.log(foodX, foodY);
     food = {x: foodX, y: foodY};
