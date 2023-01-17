@@ -70,6 +70,13 @@ function move() {
 //start button and the event listener     //start button and the event listener 
     let startButton = document.getElementById("start-button");
     startButton.addEventListener("click", function(){
+        //we get the values from the html, the options that the user chose in the select    
+        speed = parseInt(document.getElementById("speed").value);
+        distance = parseInt(document.getElementById("distance").value);
+        length = parseInt(document.getElementById("length").value);
+        console.log(speed, distance, length);
+        
+
         if(gameStarted){
             startButton.innerHTML = "Restart";
             createFood();
