@@ -1,10 +1,34 @@
+.container{ /*on centre sur la largeur de la page, meme ce qui n'est pas du texte*/
+  flex-direction: row;
+  margin: 0 auto;
+  width: 70%;
+  height: 500px;
+  background-image: url("assets/wood.png");
+
+}
+  
+.scoreContainer {
+  color: white;
+  text-align: center;
+  font-size: large;
+
+}
+#start-button{ 
+  position: relative;
+  left: 48%;
+  
+
+}
+
 #game-area {
   /* on met l'image d'herbe en background */
+  position: absolute;
   background-image: url("assets/herbe.png");
+  margin : 0 auto;
+  
   width: 500px;
   height: 500px;
   border: 1px solid black;
-  position: relative;
 
 }
 
