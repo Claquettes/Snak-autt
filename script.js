@@ -1,6 +1,6 @@
 let gameArea = document.getElementById("game-area");
 let snake = [{x: 150, y: 150}];
-let dx = 20;
+let dx = 10;
 let dy = 0;
 let score = 0;
 let gameStarted = true;
@@ -69,20 +69,20 @@ function move() {
                 snakeUnit.style.top = snake[i].y + "px";
                 gameArea.appendChild(snakeUnit);
             }
-            gameLoop = setInterval(move, 200);
+            gameLoop = setInterval(move, 100);
             document.onkeydown = function(event) {
-                if (event.keyCode === 37 && dx !== 20) {
-                    dx = -20;
+                if (event.keyCode === 37 && dx !== 10) {
+                    dx = -10;
                     dy = 0;
-                } else if (event.keyCode === 38 && dy !== 20) {
+                } else if (event.keyCode === 38 && dy !== 10) {
                     dx = 0;
-                    dy = -20;
-                } else if (event.keyCode === 39 && dx !== -20) {
-                    dx = 20;
+                    dy = -10;
+                } else if (event.keyCode === 39 && dx !== -10) {
+                    dx = 10;
                     dy = 0;
-                } else if (event.keyCode === 40 && dy !== -20) {
+                } else if (event.keyCode === 40 && dy !== -10) {
                     dx = 0;
-                    dy = 20;
+                    dy = 10;
                 }
             }
             gameStarted = true;
@@ -99,7 +99,7 @@ function move() {
             //WE RESET THE SNAKE
             snake = [{x: 150, y: 150}];
             //WE RESET THE DIRECTION
-            dx = 20;
+            dx = 10;
             dy = 0;
             //WE RESET THE GAME STARTED
             startButton.innerHTML = "Start";
