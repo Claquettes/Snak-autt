@@ -6,10 +6,8 @@ let score = 0;
 let gameStarted = true;
 let gameLoop;
 
-//on récupère depuis le html speed, distance et length, et on les converti en int
-let speed = parseInt(document.getElementById("speed").value);
-let distance = parseInt(document.getElementById("distance").value);
-let length = parseInt(document.getElementById("length").value);
+
+
 
 function createFood() {
     let foodX = Math.floor(Math.random() * 50) * 10;
