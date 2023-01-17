@@ -6,6 +6,9 @@ let score = 0;
 let gameStarted = true;
 let gameLoop;
 
+// on récupère depuis le html speed, length et distance
+
+
 function createFood() {
     let foodX = Math.floor(Math.random() * 50) * 10;
     let foodY = Math.floor(Math.random() * 50) * 10;
