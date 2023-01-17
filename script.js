@@ -7,8 +7,8 @@ let gameStarted = true;
 let gameLoop;
 
 function createFood() {
-    let foodX = Math.floor(Math.random() * 30) * 10;
-    let foodY = Math.floor(Math.random() * 30) * 10;
+    let foodX = Math.floor(Math.random() * 50) * 10;
+    let foodY = Math.floor(Math.random() * 50) * 10;
     food = {x: foodX, y: foodY};
     let foodUnit = document.createElement("div");
     foodUnit.id = "food";
@@ -31,7 +31,7 @@ function move() {
     let snakeHead = snake[snake.length - 1];
     let newX = snakeHead.x + dx;
     let newY = snakeHead.y + dy;
-    if (newX >= 0 && newX <= 290 && newY >= 0 && newY <= 290) {
+    if (newX >= 0 && newX <= 490 && newY >= 0 && newY <= 490) {
         snake.push({x: newX, y: newY});
         checkCollision();
         if (newX === food.x && newY === food.y) {
