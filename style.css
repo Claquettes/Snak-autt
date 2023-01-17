@@ -1,8 +1,11 @@
 #game-area {
+  /* on met l'image d'herbe en background */
+  background-image: url("assets/herbe.png");
   width: 500px;
   height: 500px;
   border: 1px solid black;
   position: relative;
+
 }
 
 .snake-unit {
