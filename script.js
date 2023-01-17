@@ -25,6 +25,11 @@ function createFood() {
     foodUnit.style.top = foodY + "px";
     gameArea.appendChild(foodUnit);
 }
+function calculSpeed(){
+    let speedToUse = parseInt(speed) * 10;
+    console.log(speedToUse);
+   
+}
 
 function checkCollision() {
     for (let i = 0; i < snake.length - 1; i++) {
@@ -39,6 +44,7 @@ function checkCollision() {
 
 
 function move() {
+    calculSpeed();
     let snakeHead = snake[snake.length - 1];
     let newX = snakeHead.x + dx;
     let newY = snakeHead.y + dy;
