@@ -15,8 +15,9 @@ console.log(speed, distance, length);
 
 
 function createFood() {
-    let foodX = Math.floor(Math.random() * 50) * 10 - distance*10;
-    let foodY = Math.floor(Math.random() * 50) * 10 - distance*10;
+    let foodX = Math.floor(Math.random() * 50) * 10;
+    let foodY = Math.floor(Math.random() * 50) * 10;
+    
     console.log(foodX, foodY);
     food = {x: foodX, y: foodY};
     let foodUnit = document.createElement("div");
