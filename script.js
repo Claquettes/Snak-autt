@@ -7,9 +7,9 @@ let gameStarted = true;
 let gameLoop;
 
 //on récupère depuis le html speed, distance et length, et on les convertit en int
-let speed = parseInt(document.getElementsByClassName("speed").value);
-let distance = parseInt(document.getElementsByClassName("distance").value);
-let length = parseInt(document.getElementsByClassName("length").value);
+let speed = parseInt(document.getElementById("speed").value);
+let distance = parseInt(document.getElementById("distance").value);
+let length = parseInt(document.getElementById("length").value);
 console.log(speed, distance, length);
 
 
