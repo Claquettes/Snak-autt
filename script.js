@@ -1,18 +1,15 @@
 let gameArea = document.getElementById("game-area");
-let snake = [{x: 150, y: 150}];
-let dx = 10;
-let dy = 0;
-let score = 0;
-let gameStarted = true;
-let gameLoop;
-
-//on récupère depuis le html speed, distance et length, et on les convertit en int
-let speed = parseInt(document.getElementById("speed").value);
 let distance = parseInt(document.getElementById("distance").value);
 let length = parseInt(document.getElementById("length").value);
 console.log(speed, distance, length);
 
-
+let snake = [{x: 150, y: 150}];
+let speedToUse = parseInt(speed) * 10;
+let dx = parseInt(speedToUse);
+let dy = 0;
+let score = 0;
+let gameStarted = true;
+let gameLoop;
 
 function createFood() {
     let foodX = Math.floor(Math.random() * 50) * 10;
@@ -22,7 +19,7 @@ function createFood() {
         foodX = Math.floor(Math.random() * 50) * 10;
         foodY = Math.floor(Math.random() * 50) * 10;
     }while (foodX < (10 + (distance * 10))|| foodX > (490 - (distance * 10)) || foodY < (10 + (distance * 10)) || foodY > (490 - (distance * 10)));
-    
+
     console.log(foodX, foodY);
     food = {x: foodX, y: foodY};
     let foodUnit = document.createElement("div");
@@ -83,6 +80,8 @@ function move() {
 //start button and the event listener     //start button and the event listener 
     let startButton = document.getElementById("start-button");
     startButton.addEventListener("click", function(){
+        let speedToUse = parseInt(speed) * 10;
+        
         //we get the values from the html, the options that the user chose in the select    
         speed = parseInt(document.getElementById("speed").value);
         distance = parseInt(document.getElementById("distance").value);
