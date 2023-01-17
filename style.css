@@ -1,20 +1,44 @@
 .container{ /*on centre sur la largeur de la page, meme ce qui n'est pas du texte*/
-  flex-direction: row;
+  display: flex;
   margin: 0 auto;
   width: 70%;
   height: 500px;
   background-image: url("assets/wood.png");
   border: 1px solid black;
+  z-index: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
 
 }
-  
+.containerBottom{ /*on centre sur la largeur de la page, meme ce qui n'est pas du texte*/
+  display: flex;
+  margin: 0 auto;
+  width: 70%;
+  height: 500px;
+  background-image: url("assets/water.webp");
+  border: 1px solid black;
+  z-index: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: normal;
+  align-content: normal;
+
+}
 .scoreContainer {
+
+  display: block;
   color: white;
   text-align: center;
   font-size: large;
+  z-index: 1;
 
 }
-#start-button{ 
+#start-button{
+  display: block; 
   position: relative;
   left: 48%;
   
@@ -23,14 +47,29 @@
 
 #game-area {
   /* on met l'image d'herbe en background */
+  display: block;
   position: absolute;
   background-image: url("assets/herbe.png");
   margin : 0 auto;
   
   width: 500px;
   height: 500px;
-  border: 1px solid black;
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
 
+}
+#other-area {
+  display: block;
+  left: 500px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
 }
 
 .snake-unit {

@@ -36,6 +36,8 @@ function move() {
         checkCollision();
         if (newX === food.x && newY === food.y) {
             score++;
+            //on met a jour le score
+            document.getElementById("score").innerHTML = score;
             document.getElementById("food").remove();
             createFood();
         } else {
