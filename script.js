@@ -1,7 +1,7 @@
 let gameArea = document.getElementById("game-area");
 let distance = parseInt(document.getElementById("distance").value);
-let length = parseInt(document.getElementById("length").value);
-console.log(speed, distance, length);
+let speed = parseInt(document.getElementById("speed").value);
+console.log("speed, distance", speed, distance);
 
 let snake = [{x: 150, y: 150}];
 let speedToUse = parseInt(speed) * 10;
@@ -28,11 +28,6 @@ function createFood() {
     foodUnit.style.top = foodY + "px";
     gameArea.appendChild(foodUnit);
 }
-function calculSpeed(){
-    let speedToUse = parseInt(speed) * 10;
-    console.log(speedToUse);
-   
-}
 
 function checkCollision() {
     for (let i = 0; i < snake.length - 1; i++) {
@@ -44,10 +39,8 @@ function checkCollision() {
     }
 }
 
-
-
 function move() {
-    calculSpeed();
+
     let snakeHead = snake[snake.length - 1];
     let newX = snakeHead.x + dx;
     let newY = snakeHead.y + dy;
@@ -87,8 +80,6 @@ function move() {
         distance = parseInt(document.getElementById("distance").value);
         length = parseInt(document.getElementById("length").value);
         console.log(speed, distance, length);
-        
-
         if(gameStarted){
             startButton.innerHTML = "Restart";
             createFood();
@@ -100,7 +91,7 @@ function move() {
                 snakeUnit.style.top = snake[i].y + "px";
                 gameArea.appendChild(snakeUnit);
             }
-            gameLoop = setInterval(move, 100);
+            gameLoop = setInterval(move, parseInt(100/parseInt(speed))); 
             document.onkeydown = function(event) {
                 if (event.keyCode === 37 && dx !== 10) {
                     dx = -10;
