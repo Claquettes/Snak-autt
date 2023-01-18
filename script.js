@@ -48,7 +48,7 @@ function move() {
         snake.push({x: newX, y: newY});
         checkCollision();
         if (newX === food.x && newY === food.y) {
-            score++;
+            score = score + parseInt(speed);
             //on met a jour le score
             document.getElementById("score").innerHTML = score;
             document.getElementById("food").remove();
@@ -78,7 +78,6 @@ function move() {
         //we get the values from the html, the options that the user chose in the select    
         speed = parseInt(document.getElementById("speed").value);
         distance = parseInt(document.getElementById("distance").value);
-        length = parseInt(document.getElementById("length").value);
         console.log(speed, distance, length);
         if(gameStarted){
             startButton.innerHTML = "Restart";
