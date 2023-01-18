@@ -5,6 +5,7 @@
 .container{ /*on centre sur la largeur de la page, meme ce qui n'est pas du texte*/
   display: flex;
   margin: 0 auto;
+  margin-top: 10%;
   width: 70%;
   height: 500px;
   background-image: url("assets/wood.png");
@@ -17,27 +18,12 @@
   align-content: normal;
 
 }
-.containerBottom{ /*on centre sur la largeur de la page, meme ce qui n'est pas du texte*/
-  display: flex;
-  position:relative;
-  margin: 0 auto;
-  width: 70%;
-  height: 400px;
-  background-image: url("assets/water.webp");
-  border: 1px solid black;
-  z-index: 2;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: normal;
-  align-items: normal;
-  align-content: normal;
 
-}
 .scoreContainer {
+  font-size: 50px;
   display: block;
   color: white;
   text-align: center;
-  font-size: large;
   z-index: 1;
 
 }
@@ -51,27 +37,17 @@
   z-index: 1;
   width: 500px;
   height: 500px;
-  top: 13%;
+  top: 4%;
   left: 50%;
 }
 
-.scoreContainer {
-  display: block;
-  color: white;
-  text-align: center;
-  font-size: large;
-  z-index: 1;
-
-}
-
 #start-button{
-  height: 75px;
-  width: 100px;
-  position: relative;
-  left: 48%;
-  z-index: 3;
-  
 
+  box-shadow: 4px 4px 10px rgba(139,195,74,255);
+  margin-top: 4%;
+  height: 50px;
+  width: 100px;
+  z-index: 3;
 }
 
 #game-area {
