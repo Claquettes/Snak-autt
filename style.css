@@ -19,6 +19,7 @@
 
 }
 
+
 .scoreContainer {
   font-size: 50px;
   display: block;
@@ -41,6 +42,10 @@
   left: 50%;
 }
 
+#bottomText{
+  margin-top: 10px;
+  font-size: 10px;
+}
 #start-button{
 
   box-shadow: 3px 3px 8px rgba(139,195,74,255);

@@ -48,7 +48,7 @@ function move() {
         snake.push({x: newX, y: newY});
         checkCollision();
         if (newX === food.x && newY === food.y) {
-            score = score + parseInt(speed);
+            score = score + parseInt(speed) - parseInt(distance)+ 2;
             //on met a jour le score
             document.getElementById("score").innerHTML = score;
             document.getElementById("food").remove();
